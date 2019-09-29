@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="IRAKOZE Yves">
-    <title>welcome | SignUp</title>
+    <title>welcome | SignIn</title>
      <!--styles-->
      <link rel="stylesheet" href="../../assets/font-awesome/css/font-awesome.min.css">
-     <link rel="stylesheet" href="../../css/signup.css">
+     <link rel="stylesheet" href="../../css/signin.css">
 
 </head>
 <body>
  <nav>
 <div class="diary">
-<a class="navbar-brand" href="">MyDiary</a>
+<a class="navbar-brand" href="../../index.html">MyDiary</a>
 <i class="fa fa-bars menu" aria-hidden="true"></i>
 </div>
 <ul id="ul">
@@ -46,43 +46,37 @@ Home
 <div class="layer ">
 <div class="wrapper">
 <div class="form-container">
-<span class="form-heading">Create Account</span>
-<form action="signup.html" method="POST" id="myform">
-<div class="input-group">
-<input type="text" placeholder="FirstName" required>
-<span class="bar"></span>
- </div>
-
- <div class="input-group">
-        <input type="text" placeholder="LastName" required>
-        <span class="bar"></span>
-         </div>
+<span class="form-heading">Login</span>
+<form action="#" method="POST">
 
 <div class="input-group">
 <input type="text" placeholder="Email" required>
 <span class="bar"></span>
 </div>
 <div class="input-group">
-<input type="password" placeholder="Password" id="password1" required>
+<input type="password" placeholder="Password" required>
 <span class="bar"></span>
 </div>
-<div class="input-group">
-<input type="password" placeholder="Confirm Password" id="password2" required>
-<span class="bar"></span>
-</div>
+<div class="sign">
+    <span class="checkbox">
+      <label class="checkbox"><input type="checkbox" name="checkbox" checked="">Remember me</label>
+    </span>
+    <a class="forgot" href="ForgotPassword.html">Forgot Password?</a>
+    <div class="clear"> </div>
+  </div>
+
+
+
 <div class="switch-login">
-        <a href="signin.html">You have account?<span>Sign In</span></a>
+        <a href="signup.html">You Don't have account?<span>SignUp</span></a>
         </div>
 <button>
 <i class="fas fa-angle-right"></i>
 </button>
-
 </form>
-
 </div>
-
 </div>
-                
+               
 </div>
 </div>
 <script src="../../js/index.js"  type="text/javascript"></script>
