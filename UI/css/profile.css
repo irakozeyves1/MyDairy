@@ -74,7 +74,7 @@ body, html{
     }
     .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        max-width: 250px;
+        max-width: 300px;
         margin: auto;
         text-align: center;
         font-family: arial;
@@ -90,7 +90,7 @@ body, html{
         text-align: center;
         cursor: pointer;
         width: 100%;
-        font-size: 18px;
+        font-size: 16px;
       }
       a {
         text-decoration: none;
@@ -121,7 +121,7 @@ body, html{
         width: 30%;
         text-align: center;
         display: inline-block;
-        font-size: 1.5em;
+        font-size: 1.1em;
         border-right: solid 1px #bdc3c7;
       }
       .profile__data .data__item:last-child {
@@ -144,6 +144,46 @@ body, html{
         width: 90%;
         margin: auto;
         overflow: hidden;
+      }
+
+      .reminder-block {
+        margin: 1em auto 0 auto;
+        width: 90%;
+        background:#fff;
+        color:#000;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.1em;
+      }
+      .switch {
+        display: inline-block;
+        font-size: 20px; 
+        height: 1em;
+        width: 2em;
+        background: #bdb9a6;
+        border-radius: 1em;
+      }
+      .switch__input {
+        position: absolute;
+        opacity: 0;
+      }
+      .switch__div {
+        height: 1em;
+        width: 1em;
+        border-radius: 1em;
+        background: #fff;
+        box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+        -webkit-transition: all 300ms;
+        -moz-transition: all 300ms;
+        transition: all 300ms;
+      }
+      .switch__input:checked + .switch__div {
+        -webkit-transform: translate3d(100%, 0, 0);
+        -moz-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+        background: #0d09f6;
       }
      @media (max-width: 768px){
             body{
@@ -181,6 +221,9 @@ body, html{
               }
              nav i{
                 cursor: pointer;
+              }
+              .card{
+                max-width: 200px; 
               }
     
         }
