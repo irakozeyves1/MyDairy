@@ -91,8 +91,23 @@ body, html{
         justify-content: space-between;
         align-items: center;
       }
+      .button {
+        display: inline-block;
+        padding: 15px 20px;  
+        border-radius: 3px;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+      }
+      .button--success {
+        background-color: #00316b;
+        color: white;
+        margin-top: 10px;
+      }
      
-      
+     
 
 
      @media (max-width: 768px){
