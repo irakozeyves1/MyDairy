@@ -107,7 +107,50 @@ body, html{
         margin-top: 10px;
       }
      
-     
+      .story__toolbar .toolbar__delete-btn {
+        background-color: red;
+        color:#fff;
+      }
+      .page {
+        font-family: "Poppins", sans-serif;
+        padding: 0;
+        margin: 0;
+        background-color: #6865f9;
+      }
+      .page--is-flex {
+        display: flex;
+        flex-direction: column;
+      }
+      .page--stretches {
+        min-height: 100vh;
+      }
+      .modal {
+        top: 0;
+        left: 0;
+        overflow: auto;
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+        z-index: 1;
+      }
+      .modal__body {
+        width: 38%;
+        text-align: center;
+        margin: 200px auto;
+        background-color: #fff;
+        height: 200px;
+        padding: 0 15px;
+        box-shadow: 2px -1px 3px 2px rgba(255, 255, 255, 0.5);
+      }
+      .modal__text {
+        padding-top: 80px;
+      }
+      .modal__cancel-btn {
+        background-color:transparent;
+        color: #00316b;
+      }
 
 
      @media (max-width: 768px){
@@ -153,7 +196,9 @@ body, html{
               .story {
                 width: 100%;
               }
-    
+             .modal__text{
+              padding-top: 16px;
+             }
 
 
 

@@ -67,9 +67,16 @@ Logout
        
                 <div class="toolbar__buttons">
                         <button type="button" class="button button--success toolbar__edit-btn js-edit-story">Update</button>
+                        <button type="button" class="button toolbar__delete-btn js-delete-story"><i class="fa fa-trash" aria-hidden="true"></i></button>
                        
                       </div>
-
+                      <div class="page page--is-flex page--stretches">
+                            <div class="modal js-modal">
+                             <div class="modal__body">
+                              <p class="modal__text">Are you sure you want to delete?</p>
+                              <button type="button" class="button button--success js-confirm-modal">Confirm</button>
+                              <button type="button" class="button modal__cancel-btn js-cancel-modal">Cancel</button>
+                            </div>
 
 
       </div>
