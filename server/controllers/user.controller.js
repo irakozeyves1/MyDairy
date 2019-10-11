@@ -17,3 +17,14 @@ export const signup = (req, res) => {
     },
   });
 };
+
+export const signin = (req, res) => {
+	const token = genToken(req.body.email);
+	return res.status(200).send({
+		'status': 200,
+		'message': 'User is successfully logged in',
+		'data': {
+			'token': token,
+		}
+	});
+};
