@@ -12,9 +12,14 @@ const signupSchema = Joi.object({
     .required(),
 });
 
+const signinSchema = Joi.object({
+	email: Joi.string().strict().trim().min(3).required().email(),
+	password: Joi.string().strict().trim().min(6).required()
+});
 
 const paths = {
   '/auth/signup': signupSchema,
+  '/auth/signin': signinSchema
 };
 
 export default paths;
