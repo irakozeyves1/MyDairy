@@ -59,3 +59,10 @@ export const remove = (req, res) => {
     });
   }
 };
+
+export const entryElement = (req, res) => {
+  return res.status(200).send({
+    status: 200,
+    data: entries,
+  });
+};
