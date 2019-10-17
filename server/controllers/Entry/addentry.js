@@ -17,3 +17,29 @@ export const entry = (req, res) => {
     },
   });
 };
+
+
+export const update = (req, res) => {
+  const { entryId } = req.params;
+  const { title, description } = req.body;
+  if (isNaN(entryId)) {
+    return res.status(400).send({
+      status: 400,
+      error: `EntryId ${entryId} should be an integer`,
+    });
+  }
+  const oneEntry = entries.find((entry) => entry.id == entryId);
+  if (!oneEntry) {
+    return res.status(404).send({
+      status: 404,
+      error: `Entry with Id ${entryId} was  not found`,
+    });
+  }
+  oneEntry.title = title;
+  oneEntry.description = description;
+  return res.status(201).send({
+    status: 201,
+    message: 'Entry created successfully',
+    data: oneEntry,
+  });
+};
