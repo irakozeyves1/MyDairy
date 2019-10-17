@@ -60,9 +60,24 @@ export const remove = (req, res) => {
   }
 };
 
+
 export const entryElement = (req, res) => {
   return res.status(200).send({
     status: 200,
     data: entries,
+  });
+};
+
+export const getEntryById = (req, res) => {
+  const byid = entries.find((ide) => ide.id == req.params.entryId);
+  if (byid) {
+    return res.status(200).send({
+      'status': 200,
+      'data': byid
+    });
+  }
+  return res.status(404).send({
+    status: 404,
+    message: 'No record found '
   });
 };
