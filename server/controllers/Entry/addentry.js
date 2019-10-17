@@ -5,6 +5,8 @@ import createdOn from '../../helpers/timestamp';
 
 const Datetime = createdOn();
 
+// create entry
+
 export const entry = (req, res) => {
   const entry = new Entry(entries.length + 1, Datetime, req.body.title, req.body.description);
   entries.push(entry);
@@ -18,7 +20,7 @@ export const entry = (req, res) => {
   });
 };
 
-
+// update entry
 export const update = (req, res) => {
   const { entryId } = req.params;
   const { title, description } = req.body;
@@ -42,4 +44,18 @@ export const update = (req, res) => {
     message: 'Entry created successfully',
     data: oneEntry,
   });
+};
+
+// remove an entry
+export const remove = (req, res) => {
+  const removes = entries.findIndex((entry) => entry.id == req.params.entryId);
+  if (removes > -1) {
+    entries.splice(removes, 1);
+    return res.status(200).send({
+      status: 200,
+      data: {
+        message: 'entry successfully deleted',
+      },
+    });
+  }
 };
