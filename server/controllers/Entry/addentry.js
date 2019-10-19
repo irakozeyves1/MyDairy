@@ -39,9 +39,9 @@ export const update = (req, res) => {
   }
   oneEntry.title = title;
   oneEntry.description = description;
-  return res.status(201).send({
-    status: 201,
-    message: 'Entry created successfully',
+  return res.status(200).send({
+    status: 200,
+    message: 'Entry edited successfully',
     data: oneEntry,
   });
 };
@@ -61,23 +61,22 @@ export const remove = (req, res) => {
 };
 
 
-export const entryElement = (req, res) => {
-  return res.status(200).send({
-    status: 200,
-    data: entries,
-  });
-};
+export const entryElement = (req, res) => res.status(200).send({
+  status: 200,
+  data: entries.reverse(),
+
+});
 
 export const getEntryById = (req, res) => {
   const byid = entries.find((ide) => ide.id == req.params.entryId);
   if (byid) {
     return res.status(200).send({
-      'status': 200,
-      'data': byid
+      status: 200,
+      data: byid,
     });
   }
   return res.status(404).send({
     status: 404,
-    message: 'No record found '
+    message: 'No record found ',
   });
 };
