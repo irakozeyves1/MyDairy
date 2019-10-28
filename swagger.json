@@ -1,0 +1,412 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "MyDiary is an online journal where users can pen down their thoughts and feelings.",
+        "version": "1.0.0",
+        "title": "MyDiary ",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "irakozeyves@gmail.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "localhost:3000"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/api/v1",
+    "tags": [
+        {
+            "name": "user",
+            "description": "signup,signin"
+        },
+        {
+            "name": "entries",
+            "description": "user can add entry, update entry, delete entry, get all entry, get entry by its own identification"
+        }
+       
+    ],
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "paths": {
+        "/auth/signup": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Create account",
+                "description": "this endpoint will be used to create a new account",
+                "operationId": "adduser",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "User object that needed to create account",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/signup"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "User created successfully"
+                    },
+                    "400": {
+                        "description": "bad request | Invalid input"
+                    },
+                    "409": {
+                        "description": "User Already Exist"
+                    }
+                    
+                }
+            }
+        },
+        "/auth/signin": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "user signin",
+                "description": "this endpoint a registered user can be able to sign in",
+                "operationId": "signin",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "user's object that is needed to sign in a user'",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/signin"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "sign in successfully"
+                    },
+                    "400": {
+                        "description": "Bad request | invalid input"
+                    },
+                    "401": {
+                        "description": "Incorrect credentials"
+                    }
+            
+                }
+            }
+        },
+        "/entries": {
+            "post": {
+                "tags": [
+                    "entries"
+                ],
+                "summary": "create an entries",
+                "description": "at this endpoint user can create an entry ",
+                "operationId": "createentries",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "the token of the user",
+                        "required": true,
+                        "type": "string"
+                    }, 
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "request entry object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/entries"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Entry Created Successfully"
+                    },
+                    "404": {
+                        "description": "Not Have Access To Server"
+                    },
+                    "500": {
+                        "description": "Server Not Found"
+                    }
+                }
+            }
+        },
+        "/entries/{entryId}": {
+            "patch": {
+                "tags": [
+                    "entries"
+                ],
+                "summary": "A user can update their entries.",
+                "description": "this user can  modify their entry according to title and description",
+                "operationId": "update-entry",
+                 "consumes": [
+                     "application/json",
+                     "application/xml"
+                 ],
+                 "produces": [
+                     "application/xml",
+                     "application/json"
+                 ],
+               "parameters": [{
+                       "name": "token",
+                       "in": "header",
+                       "description": "the token of the user",
+                       "required": true,
+                       "type": "string"
+                   },
+                    {
+                        "name": "entryId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "entryId to edite their content"
+                    },
+                   {
+                       "in": "body",
+                       "name": "body",
+                       "description": "request entry object",
+                       "required": true,
+                       "schema": {
+                           "$ref": "#/definitions/entries"
+                       }
+                   }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Entries successfully Edited"
+                    },
+                    "400": {
+                        "description": "Bad Request - invalid inputs "
+                    },
+                    "401": {
+                        "description": "Unauthorized -  No token provided"
+                    },
+                    "403": {
+                        "description": "Not allowed to edit this entry"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+         }
+        },
+        "/entries/{entryId} ": {
+            "delete": {
+                "tags": [
+                    "entries"
+                ],
+                "summary": "A user can delete their entries.",
+                "description": "this user can delete their entry ",
+                "operationId": "delete-entry",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                        "name": "token",
+                        "in": "header",
+                        "type": "string",
+                        "description": "The value to provide in the  header of API request"
+                    },
+                    {
+                        "name": "entryId",
+                        "in": "path",
+                        "type": "string",
+                        "description": "entryId to delete their content"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Entries successfully Deleted"
+                    },
+                    "400": {
+                        "description": "Bad Request - invalid inputs "
+                    },
+                    "401": {
+                        "description": "Unauthorized -  No token provided"
+                    },
+                    "403": {
+                        "description": "Not Allowed To delete This Entry"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/entries ": {
+            "get": {
+                "tags": [
+                    "entries"
+                ],
+                "summary": "view all their entries",
+                "description": "at this endpoint user can view all their entered entry ",
+                "operationId": "get-entry",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "token",
+                    "in": "header",
+                    "description": "the token of the user to view all their entry",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "all written Entries",
+                        "type": "object",
+                        "example": {
+                            "id": 1,
+                             "CreatedOn": "2019-10-27 22:53:45",
+                             "title": "The Hare and the Tortoise",
+                             "description": "A Hare was making fun of the Tortoise one day for being so slow.Do you ever get anywhere? he asked with a mocking laugh."
+                            
+                        }
+                    },
+                    "401": {
+                        "description": "you are not a user"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "500": {
+                        "description": "server not found"
+                    }
+                }
+            }
+        },
+        "/entries/{entryId}  ": {
+            "get": {
+                "tags": [
+                    "entry"
+                ],
+                "summary": "return a specific  entry",
+                "description": "at this endpoint should return one entry of the given id",
+                "operationId": "specificid",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "name": "entryId",
+                        "in": "path",
+                        "description": "id of the mentor",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "the token of the user to view that a specific entry",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "get entry by specific identification",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "You Are Not a User"
+                    },
+                    "404": {
+                        "description": "Not Have Access To Server"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+        
+    },
+    "definitions": {
+        "signin": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "user"
+            }
+        },
+        "signup": {
+            "type": "object",
+            "properties": {
+                "firstname": {
+                    "type": "string"
+                },
+                "lastname": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }   
+               
+            },
+            "xml": {
+                "name": "user"
+            }
+        },
+        "entries": {
+            "type": "object",
+            "properties": {
+                 "title": {
+                     "type": "string"
+                 },
+                  "description": {
+                      "type": "string"
+                  }
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}
