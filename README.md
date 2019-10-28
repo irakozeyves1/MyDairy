@@ -1,7 +1,7 @@
 # MyDairy
 [![Build Status](https://travis-ci.org/irakozeyves1/MyDiary.svg?branch=develop)](https://travis-ci.org/irakozeyves1/MyDiary)
 [![Coverage Status](https://coveralls.io/repos/github/irakozeyves1/MyDiary/badge.svg?branch=develop)](https://coveralls.io/github/irakozeyves1/MyDiary?branch=develop)
-
+<a href="https://codeclimate.com/github/irakozeyves1/MyDiary/maintainability"><img src="https://api.codeclimate.com/v1/badges/30ccaab0ee1d8caf9511/maintainability" /></a>
 ## Platform Description
 MyDiary is an online journal where users can pen down their thoughts and feelings.
 # Pivotal Tracker Story
