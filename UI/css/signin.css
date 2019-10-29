@@ -1,39 +1,47 @@
-body, html{
+body,
+html {
     height: 100%;
     margin: 0;
     font: 500 15px/1.8 "Lato", sans-serif;
-    color:#777;
+    color: #777;
     overflow: hidden;
-    }
-    nav{
-        width: 100%;
-        background: #00316b;
-        margin-top: -1.5em;
-    }
-    nav ul{
-        width: 80%;
-        margin: 0 auto;
-        padding: 0;
-        text-align: right;
-    }
-    nav ul li {
-        list-style: none;
-        padding: 20px;
-        display: inline-block;
-    }
-    nav ul li:hover{
-        background:#008CBA;
-    }
-    nav ul li a{
-        color:#fff;
-        text-decoration: none;
-        font-size: 16px;
-    }
-    nav ul li i {
-        font-size: 50px;
-        color: #fff;
-    }                  
-    .diary {
+}
+
+nav {
+    width: 100%;
+    background: #00316b;
+    margin-top: -1.5em;
+}
+
+nav ul {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: right;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 20px;
+    display: inline-block;
+}
+
+nav ul li:hover {
+    background: #008CBA;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li i {
+    font-size: 50px;
+    color: #fff;
+}
+
+.diary {
     width: 100%;
     padding: 10px 20px;
     background: #001f44;
@@ -41,40 +49,45 @@ body, html{
     box-sizing: border-box;
     color: #fff;
     font-size: 30px;
-    }
-    .diary i {
-        display : none;  
-    }
-    .diary .navbar-brand {
-        float: left;
-       height: 50px;
-       padding: 35px 15px;
-       font-size: 25px;
-       line-height: 20px;
-       color: #fff;
-       text-decoration: none;
-    }
-    .img{
-        position:relative;
-        opacity: 0.95;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .img{
-        background-image: url("../assets/images/sample.jpg");
-        height: 100%;
-    }
-    .layer {
-        background-color: rgba(30, 30, 80, 0.5);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-.wrapper{
+}
+
+.diary i {
+    display: none;
+}
+
+.diary .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 35px 15px;
+    font-size: 25px;
+    line-height: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.img {
+    position: relative;
+    opacity: 0.95;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img {
+    background-image: url("../assets/images/sample.jpg");
+    height: 100%;
+}
+
+.layer {
+    background-color: rgba(30, 30, 80, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
     width: 90%;
     height: 90vh;
     margin: 0 auto;
@@ -82,6 +95,7 @@ body, html{
     justify-content: center;
     align-items: center;
 }
+
 .form-container {
     width: 90%;
     max-width: 30rem;
@@ -89,7 +103,8 @@ body, html{
     position: relative;
     padding: 6rem 0;
 }
-.form-container::before{
+
+.form-container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -97,66 +112,74 @@ body, html{
     width: 100%;
     height: 30rem;
     background: linear-gradient(to left, #00316b, #00316b);
-    border-bottom-right-radius: 100%; 
+    border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
     z-index: -1;
 }
-.form-heading{
+
+.form-heading {
     color: #fff;
     background-color: #00316b;
     font-size: 2.1rem;
     position: absolute;
-    top:2.5rem;
+    top: 2.5rem;
     left: 10rem;
 
 }
+
 form {
     transform: translate(10rem);
     padding: 1.5rem 2rem 3rem 2rem;
     background: #fff;
     border-radius: 1rem;
-    box-shadow: 0 1px 1.5rem rgba(0, 0,0 , .1);
+    box-shadow: 0 1px 1.5rem rgba(0, 0, 0, .1);
 }
+
 .input-group {
     width: 90%;
     margin: 0 auto;
-    position:relative;
+    position: relative;
 }
+
 .input-group input {
     position: relative;
     width: 100%;
     padding: 1rem 0;
     margin-top: .5rem;
-    border:none;
-    outline:none;
+    border: none;
+    outline: none;
     font-size: 1rem;
 }
+
 .input-group .bar {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: rgba(0 , 0, 0, .1);
+    background: rgba(0, 0, 0, .1);
     width: 100%;
     height: .5px;
 
 }
-.input-group .bar::before{
-    content:'';
+
+.input-group .bar::before {
+    content: '';
     position: absolute;
     background: #00316b;
     width: 0;
     height: 1px;
     transition: width 650ms;
 }
-.input-group input:focus + .bar::before {
-   width: 100%;
+
+.input-group input:focus+.bar::before {
+    width: 100%;
 
 }
+
 button {
     width: 5rem;
     height: 5rem;
-    background:#00316b;
-    color:#fff;
+    background: #00316b;
+    color: #fff;
     border: .5rem solid #fff;
     outline: none;
     font-size: 2.3rem;
@@ -169,53 +192,50 @@ button {
 
 }
 
-button:hover, button:focus{
+button:hover,
+button:focus {
     border-radius: .8rem;
 
 }
-.switch-login {
-    padding-top: 4rem; 
-    text-align: center;
-}
-.switch-login a {
-    text-decoration: none;
-    color:gray ;
-    font-size: 1.1rem; 
-}
-.switch-login a span {
-    color: #00316b;
-}
-.switch-login a span:hover {
-    padding-bottom: 2px;
-    border-bottom: 2px solid #00316b; 
 
-}
-.sign{
-    padding-top: 4rem; 
+.sign {
+    padding-top: 4rem;
     text-align: center;
 }
 
 a.forgot {
     float: right;
-    color:#00316b;
+    color: #00316b;
     text-decoration: none;
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
 }
-@media screen and (max-width: 768px){
-    .body{
+
+a.signup {
+    float: right;
+    color: #00316b;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .body {
         padding-top: 2rem;
-        overflow: hidden; 
+        overflow: hidden;
         margin: 0;
         padding: 0;
     }
+
     .wrapper {
         height: 50%;
-        padding-bottom: 5rem; 
+        padding-bottom: 5rem;
         padding-top: 7rem;
     }
+
     .form-container {
         padding: 4rem 0 6rem 0;
     }
+
     .form-container::before {
         height: 6rem;
     }
@@ -226,6 +246,7 @@ a.forgot {
         font-size: 20px;
         transform: translateX(-50%);
     }
+
     form {
         border-radius: initial;
         transform: initial;
@@ -234,13 +255,16 @@ a.forgot {
         margin: 2rem 0 4rem 0;
         height: 12rem;
     }
+
     .input-group input {
         font-size: 12px;
     }
+
     .switch-login {
         margin-top: 0rem;
         font-size: 8px;
     }
+
     button {
         width: 4rem;
         height: 4rem;
@@ -250,43 +274,50 @@ a.forgot {
         transform: translateX(-50%);
     }
 }
- @media (max-width: 768px){
-        body{
-          overflow-x: hidden;
-        }
-         nav{
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
         margin-top: 0px;
-      }
-        .diary i{
-          display: block;
-        }
-        .diary .navbar-brand {
-          float: left;
-          height: 50px;
-          padding: 5px 15px;
-          font-size: 18px;
-          line-height: 20px;
-          color: #fff;
-          text-decoration:none;
-          }
-        nav ul {
-          width: 100%;
-          display: none;
-          position: absolute;
-          z-index: 10;
-          background: #00316b;
-          }
-         nav ul li{
-            display: block;
-            text-align: center;
-      
-          }
-          .active{
-            display: block;
-          }
-         nav i{
-            cursor: pointer;
-          }
+    }
+
+    .diary i {
+        display: block;
+    }
+
+    .diary .navbar-brand {
+        float: left;
+        height: 50px;
+        padding: 5px 15px;
+        font-size: 18px;
+        line-height: 20px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    nav ul {
+        width: 100%;
+        display: none;
+        position: absolute;
+        z-index: 10;
+        background: #00316b;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
 
     }
-     
+
+    .active {
+        display: block;
+    }
+
+    nav i {
+        cursor: pointer;
+    }
+
+}
