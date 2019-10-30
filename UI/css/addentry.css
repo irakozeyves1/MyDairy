@@ -136,7 +136,7 @@ nav ul li i {
   margin-bottom: 2em;
   padding: 0.5em 0;
   border: none;
-  border-bottom: 1px solid #00316b;
+  border-bottom: 0px solid black;
   padding-bottom: 1.25em;
   width: 75%;
 
@@ -150,6 +150,7 @@ nav ul li i {
   color: white;
   margin-right: 0.5em;
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
 }
 
 .form__btn--submit:hover {
