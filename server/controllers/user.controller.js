@@ -13,7 +13,8 @@ export const signup = (req, res) => {
     status: 201,
     message: 'User created successfully',
     data: {
-      token,    
+      token, 
+      
     },
   });
 };
