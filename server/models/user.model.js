@@ -1,14 +1,10 @@
-import uuid from 'uuid';
-
 export class User {
-  constructor(email, firstname, lastname, password) {
-    this.userId = uuid();
+  constructor(userId, email, firstname, lastname, password) {
+    this.userId = userId;
     this.email = email;
     this.firstname = firstname;
     this.lastname = lastname;
     this.password = password;
   }
 }
-export const users = [
-  new User('irakozeyves@gmail.com', 'irakoze', 'yves', '123456'),
-];
+export const users = [];

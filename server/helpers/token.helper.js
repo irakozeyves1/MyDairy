@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import jwt from 'jsonwebtoken';
 
-export function genToken(email) {
-  return jwt.sign({ email : email }, process.env.TOKEN_KEY);
-}
+export const genToken = (userId, firstName, lastName, email) => jwt.sign({
+  userId, firstName, lastName, email,
+}, process.env.TOKEN_KEY);
