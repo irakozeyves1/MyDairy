@@ -3,6 +3,7 @@ import chaiHttp from 'chai-http';
 import { describe, it } from 'mocha';
 import dotenv from 'dotenv';
 import server from '../app';
+import { newUser, sign } from "./mochaData/userMocha";
 
 const { expect } = chai;
 chai.use(chaiHttp);
@@ -33,14 +34,7 @@ describe('Routes do not exist', () => {
       });
   });
 });
-const newUser = {
-  email: 'anymail@gmail.com',
-  firstname: 'irakoze',
-  lastname: 'yves',
-  password: '123456',
 
-};
-// user sign up
 describe('User signup', () => {
   it('expect to be created successfully', (done) => {
     chai.request(server)
@@ -54,11 +48,6 @@ describe('User signup', () => {
       });
   });
 });
-//  signin
-const sign = {
-  email: 'anymail@gmail.com',
-  password: '123456',
-};
 
 describe('User signin', () => {
   it('User LoggedIn succesfuly', (done) => {

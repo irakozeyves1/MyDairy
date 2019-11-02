@@ -7,11 +7,12 @@
 import jwt from 'jsonwebtoken';
 import { users } from '../models/user.model';
 import Respond from '../helpers/response';
+import { StatusCodeBadRequest, StatusCodeUnauthorized } from '../helpers/statusTemp';
 
 export function verifyToken(req, res, next) {
   const token = req.header('token');
   if (!token) {
-    return res.status(401).json(new Respond(401, 'please sigin first.', null).reply());
+    return res.status(StatusCodeUnauthorized).json(new Respond(StatusCodeUnauthorized, 'please sigin first.', null).reply());
   }
   try {
 	  const verified = jwt.verify(token, process.env.TOKEN_KEY);
@@ -23,6 +24,6 @@ export function verifyToken(req, res, next) {
 	  };
 	  next();
   } catch (error) {
-    res.status(400).json(new Respond(400, 'Invalid token', null).reply());
+    res.status(StatusCodeBadRequest).json(new Respond(StatusCodeBadRequest, 'Invalid token', null).reply());
   }
 }
