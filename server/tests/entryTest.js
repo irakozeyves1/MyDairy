@@ -4,19 +4,13 @@ import { describe, it } from 'mocha';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import server from '../app';
+import { newEntry, remEntry } from './mochaData/entryMocha';
 
 const { expect } = chai;
 chai.use(chaiHttp);
 dotenv.config();
 
 const Token = jwt.sign({ email: 'anymail@gmail.com' }, process.env.TOKEN_KEY, { expiresIn: '1D' });
-const newEntry = {
-  id: 1,
-  CreatedOn: '2019-10-19 9:56:55',
-  title: 'The Hare and the Tortoise',
-  description: 'A Hare was making fun of the Tortoise one day for being so slow.Do you ever get anywhere? he asked with a mocking laugh.',
-
-};
 describe('post entry', () => {
   it('should create an entry', (done) => {
     chai.request(server)
@@ -66,13 +60,7 @@ describe('update entry', () => {
       });
   });
 });
-const remEntry = {
-  id: 1,
-  CreatedOn: '2019-10-19 9:56:55',
-  title: 'The Hare and the Tortoise',
-  description: 'A Hare was making fun of the Tortoise one day for being so slow.Do you ever get anywhere? he asked with a mocking laugh.',
 
-};
 describe('Remove Entry', () => {
   it('should be able to remove entry', (done) => {
     chai.request(server)

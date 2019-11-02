@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable import/prefer-default-export */
 import Schemas from '../helpers/validation.helper';
+import { StatusCodeNotFound } from '../helpers/statusTemp';
 
 export const validate = (req, res, next) => {
   // enabled HTTP methods for request data validation
@@ -18,7 +19,7 @@ export const validate = (req, res, next) => {
         next();
         return 0;
       } catch (error) {
-        return res.status(404).send({ 'status': 404, 'error': error.details[0].message });
+        return res.status(StatusCodeNotFound).send({ status: StatusCodeNotFound, error: error.details[0].message });
       }
     }
   }
