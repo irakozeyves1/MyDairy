@@ -123,15 +123,16 @@ nav ul li i {
     position: absolute;
     top: 2.5rem;
     left: 10rem;
+    text-align: center;
 
 }
 
 form {
-    transform: translate(10rem);
+    transform: initial;
     padding: 1.5rem 2rem 3rem 2rem;
     background: #fff;
     border-radius: 1rem;
-    box-shadow: 0 1px 1.5rem rgba(0, 0, 0, .1);
+    box-shadow: none;
 }
 
 .input-group {

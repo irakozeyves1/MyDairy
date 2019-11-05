@@ -135,10 +135,11 @@ nav ul li i {
   margin: auto;
   margin-bottom: 2em;
   padding: 0.5em 0;
-  border: none;
-  border-bottom: 0px solid black;
+  border: 1px solid #00316b;
   padding-bottom: 1.25em;
   width: 75%;
+  text-align: center;
+  border-radius: 10px;
 
 }
 
