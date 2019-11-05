@@ -1,5 +1,5 @@
 
-import { Entry } from '../models/entry.model';
+import { Entry } from '../models/entryModel';
 import createdOn from '../helpers/timestamp';
 import Respond from '../helpers/response';
 import {

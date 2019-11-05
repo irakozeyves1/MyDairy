@@ -5,7 +5,7 @@
 /* eslint-disable no-tabs */
 /* eslint-disable import/prefer-default-export */
 import jwt from 'jsonwebtoken';
-import { users } from '../models/user.model';
+import { users } from '../models/userModel';
 import Respond from '../helpers/response';
 import { StatusCodeBadRequest, StatusCodeUnauthorized } from '../helpers/statusTemp';
 import Database from '../db/db';
