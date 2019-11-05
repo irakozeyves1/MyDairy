@@ -1,12 +1,15 @@
 language: node_js
 node_js:
   - "10"
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database MyDiary_test;' -U postgres
 branches:
   only:
     - develop
-cache:
-  directories:
-    - node_modules
+script: 
+  - npm install
 script:
   - npm test
 after_success:

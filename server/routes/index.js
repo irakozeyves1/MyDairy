@@ -3,9 +3,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
-import userRoutes from "./userRoutes/user";
-import entryRoutes from "./entryRoutes/entry";
+import userRoutes from './userRoutes/user';
+import entryRoutes from './entryRoutes/entry';
 import swaggerDoc from '../../swagger.json';
+import Database from '../db/db';
+
+
+Database.createScripts();
 
 dotenv.config();
 const app = express();

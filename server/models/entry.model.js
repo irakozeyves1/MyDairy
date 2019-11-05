@@ -1,6 +1,5 @@
 export class Entry {
-  constructor(entryId, CreatedOn, title, description) {
-    this.id = entryId;
+  constructor(CreatedOn, title, description) {
     this.CreatedOn = CreatedOn;
     this.title = title;
     this.description = description;
