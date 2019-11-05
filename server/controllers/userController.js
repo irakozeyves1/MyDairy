@@ -1,6 +1,6 @@
 
-import { User } from '../models/user.model';
-import { genToken } from '../helpers/token.helper';
+import { User } from '../models/userModel';
+import { genToken } from '../helpers/tokenHelper';
 import Respond from '../helpers/response';
 import { StatusCodeOk, StatusCodeCreated } from '../helpers/statusTemp';
 import Database from '../db/db';
