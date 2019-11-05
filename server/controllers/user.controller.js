@@ -1,16 +1,14 @@
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable max-len */
-// eslint-disable-next-line import/named
-import { User, users } from '../models/user.model';
+
+import { User } from '../models/user.model';
 import { genToken } from '../helpers/token.helper';
 import Respond from '../helpers/response';
 import { StatusCodeOk, StatusCodeCreated } from '../helpers/statusTemp';
+import Database from '../db/db';
 
-export const signup = (req, res) => {
-  const user = new User(users.length + 1, req.body.email, req.body.firstname, req.body.lastname, req.body.password);
-  users.push(user);
-  const token = genToken(user.userId, user.firstname, user.lastname, user.email);
+export const signup = async (req, res) => {
+  const user = new User(req.body.firstname, req.body.lastname, req.body.email, req.body.password);
+  await Database.addUser(user);
+  const token = genToken(user.email);
   return res.status(StatusCodeCreated).json(new Respond(StatusCodeCreated, 'User is Successfully Created ', { token }, null).reply());
 };
 

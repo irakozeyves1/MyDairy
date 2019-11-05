@@ -3,7 +3,7 @@ import chaiHttp from 'chai-http';
 import { describe, it } from 'mocha';
 import dotenv from 'dotenv';
 import server from '../app';
-import { newUser, sign } from "./mochaData/userMocha";
+import { newUser, sign } from './mochaData/userMocha';
 
 const { expect } = chai;
 chai.use(chaiHttp);
@@ -21,7 +21,7 @@ describe('Welcome message', () => {
       });
   });
 });
-// test app for routes that do not exist
+
 describe('Routes do not exist', () => {
   it('Should get message of URL not found', (done) => {
     chai.request(server)

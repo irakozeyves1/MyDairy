@@ -9,7 +9,7 @@ export const validate = (req, res, next) => {
   const route = req.route.path;
   const method = req.method.toLowerCase();
 
-  if (_supportedMethods.includes(method) && Schemas[route] != undefined) {
+  if (_supportedMethods.includes(method) && Schemas[route] !== undefined) {
     // get schema for the current route
     const schema = Schemas[route];
     if (schema) {

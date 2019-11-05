@@ -37,25 +37,13 @@ describe('update entry', () => {
         done();
       });
   });
-  it('should enter an exist entry', (done) => {
-    chai.request(server)
-      .patch('/api/v1/entries/12')
-      .set('token', Token)
-      .end((err, res) => {
-        expect(res).to.have.status(404);
-        expect(res).to.be.an('object');
-        expect(res.body).to.have.property('message');
-        done();
-      });
-  });
   it('should be able to edit entry', (done) => {
     chai.request(server)
       .patch('/api/v1/entries/1')
       .set('token', Token)
-      .end((err, res) => {
+      .end((req, res) => {
         expect(res).to.have.status(200);
         expect(res).to.be.an('object');
-        expect(res.body).to.have.property('data');
         done();
       });
   });
@@ -107,6 +95,19 @@ describe('Get entries by specif id', () => {
       .end((req, res) => {
         expect(res).to.have.status(404);
         expect(res).to.be.an('object');
+        expect(res.body).to.have.property('message');
+        done();
+      });
+  });
+});
+
+describe('Testing Delete object', () => {
+  it('should delete an entry', (done) => {
+    chai.request(server)
+      .delete('/api/v1/entries/1')
+      .set('token', Token)
+      .end((req, res) => {
+        expect(res).to.have.status(200);
         expect(res.body).to.have.property('message');
         done();
       });
