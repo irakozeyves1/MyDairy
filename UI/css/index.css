@@ -97,13 +97,11 @@ nav ul li i {
 }
 
 .caption span.border1 {
-  background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   padding: 18px;
   padding-bottom: 0;
   font-size: 25px;
-  letter-spacing: 7px;
-  border-radius: 20px 20px 20px 20px;
+  letter-spacing: 1px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -241,12 +239,10 @@ footer {
   }
 
   .caption span.border1 {
-    background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
     padding: 12px;
-    font-size: 8px;
+    font-size: 16px;
     letter-spacing: 3px;
-    border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
   }
 
