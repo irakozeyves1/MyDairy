@@ -1,20 +1,14 @@
 language: node_js
-node_js:
-  - "10"
-  services:
+node_js: 
+  - "stable"
+services:
   - postgresql
 before_script:
   - psql -c 'create database MyDiary_test;' -U postgres
 cache: npm
 script: 
   - npm run test
-branches:
-  only:
-    - develop
-cache:
-  directories:
-    - node_modules
-script:
-  - npm test
+notifications: 
+  email: false
 after_success:
   - npm run coveralls
